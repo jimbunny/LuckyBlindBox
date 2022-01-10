@@ -1,0 +1,109 @@
+{
+  "code": 200,
+  "msg": "success",
+  "data": [
+      {
+      "path": "/",
+      "component": "Layout",
+      "redirect": "/index",
+      "children": [
+        {
+          "path": "/index",
+          "name": "Index",
+          "component": "dashboard/index",
+          "meta": {
+            "title": "dashboard",
+            "icon": "home",
+            "affix": true,
+            "noKeepAlive": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "/personnel",
+      "component": "Layout",
+      "redirect": "noRedirect",
+      "name": "Personnel",
+      "alwaysShow": false,
+      "meta": {
+        "title": "admin",
+        "icon": "users-cog",
+        "permissions": [
+          "SuperAdmin",
+          "admin"
+        ]
+      },
+      "children": [
+        {
+          "path": "/user",
+          "name": "User",
+          "component": "personnel/user/index",
+          "meta": {
+            "title": "user",
+            "permissions": [
+              "SuperAdmin",
+              "admin"
+            ]
+          }
+        },
+        {
+          "path": "/role",
+          "name": "Role",
+          "component": "personnel/role/index",
+          "meta": {
+            "title": "role",
+            "permissions": [
+              "SuperAdmin",
+              "admin"
+            ]
+          }
+        },
+        {
+          "path": "/permission",
+          "name": "PermissionTest",
+          "component": "personnel/permissionTest/index",
+          "meta": {
+            "title": "permissionTest",
+            "permissions": [
+              "SuperAdmin"
+            ]
+          }
+        },
+        {
+          "path": "awesomeIcon",
+          "name": "AwesomeIcon",
+          "component": "byui/icon/index",
+          "meta": {
+            "title": "icon",
+            "permissions": [
+              "SuperAdmin"
+            ]
+          }
+        },
+        {
+          "path": "router",
+          "name": "Router",
+          "component": "config/router/index",
+          "meta": {
+            "title": "route",
+            "permissions": [
+              "SuperAdmin"
+            ]
+          }
+        },
+        {
+          "path": "language",
+          "name": "Language",
+          "component": "config/language/index",
+          "meta": {
+            "title": "language",
+            "permissions": [
+              "SuperAdmin"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
